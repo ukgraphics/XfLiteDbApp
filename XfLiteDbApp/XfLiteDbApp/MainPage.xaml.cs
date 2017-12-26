@@ -19,6 +19,7 @@ namespace XfLiteDbApp
 
         private async void Create_Click(object sender, EventArgs e)
         {
+            // Use PCL Storage
             var folder = FileSystem.Current.LocalStorage;
             var subFolder = await folder.CreateFolderAsync("XfLiteDbApp", CreationCollisionOption.OpenIfExists);
             var file = await subFolder.CreateFileAsync("PersonData.db", CreationCollisionOption.ReplaceExisting);
@@ -47,6 +48,7 @@ namespace XfLiteDbApp
 
         private async void List_Click(object sender, EventArgs e)
         {
+            // Use PCL Storage
             var folder = FileSystem.Current.LocalStorage;
             var subFolder = await folder.CreateFolderAsync("XfLiteDbApp", CreationCollisionOption.OpenIfExists);
             var file = await subFolder.GetFileAsync("PersonData.db");
