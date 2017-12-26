@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XfLiteDbApp"
+             x:Class="XfLiteDbApp.MainPage">
+
+    <StackLayout>
+        <Button Text="Create"  Clicked="Create_Click" />
+        <Button Text="List"  Clicked="List_Click" />
+        <ListView x:Name="list" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Label Text="{Binding Id}"  />
+                            <Label Text="{Binding LastName}"  />
+                            <Label Text="{Binding FirstName}" />
+                            <Label Text="{Binding Height}"  />
+                            <Label Text="{Binding Weight}"  />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
